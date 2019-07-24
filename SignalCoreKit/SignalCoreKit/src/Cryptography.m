@@ -457,7 +457,7 @@ const NSUInteger kAES256_KeyByteLength = 32;
                                  digest:nil];
 }
 
-#pragma mark - Attachments
+#pragma mark - Attachments & Stickers
 
 + (nullable NSData *)decryptAttachment:(NSData *)dataToDecrypt
                                withKey:(NSData *)key
@@ -469,11 +469,35 @@ const NSUInteger kAES256_KeyByteLength = 32;
         // This *could* happen with sufficiently outdated clients.
         OWSLogError(@"Refusing to decrypt attachment without a digest.");
         *error = SCKErrorWithCodeDescription(SCKErrorCodeFailedToDecryptMessage,
-            NSLocalizedString(@"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT",
-                @"Error message when unable to receive an attachment because the sending client is too old."));
+                                             NSLocalizedString(@"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT",
+                                                               @"Error message when unable to receive an attachment because the sending client is too old."));
         return nil;
     }
+    
+    return [self decryptData:dataToDecrypt
+                     withKey:key
+                      digest:digest
+                unpaddedSize:unpaddedSize
+                       error:error];
+}
 
++ (nullable NSData *)decryptStickerData:(NSData *)dataToDecrypt
+                                withKey:(NSData *)key
+                                  error:(NSError **)error
+{
+    return [self decryptData:dataToDecrypt
+                     withKey:key
+                      digest:nil
+                unpaddedSize:0
+                       error:error];
+}
+
++ (nullable NSData *)decryptData:(NSData *)dataToDecrypt
+                         withKey:(NSData *)key
+                          digest:(nullable NSData *)digest
+                    unpaddedSize:(UInt32)unpaddedSize
+                           error:(NSError **)error
+{
     if (([dataToDecrypt length] < AES_CBC_IV_LENGTH + HMAC256_OUTPUT_LENGTH) ||
         ([key length] < AES_KEY_SIZE + HMAC256_KEY_LENGTH)) {
         OWSLogError(@"Message shorter than crypto overhead!");
@@ -536,18 +560,11 @@ const NSUInteger kAES256_KeyByteLength = 32;
 
 + (unsigned long)paddedSize:(unsigned long)unpaddedSize
 {
-    // Don't enable this until clients are sufficiently rolled out.
-    BOOL shouldPad = NO;
-    if (shouldPad) {
-        // Note: This just rounds up to the nearsest power of two,
-        // but the actual padding scheme is TBD
-        return pow(2, ceil( log2( unpaddedSize )));
-    } else {
-        return unpaddedSize;
-    }
+    return MAX(541, floor( pow(1.05, ceil( log(unpaddedSize) / log(1.05)))));
 }
 
 + (nullable NSData *)encryptAttachmentData:(NSData *)attachmentData
+                                 shouldPad:(BOOL)shouldPad
                                     outKey:(NSData *_Nonnull *_Nullable)outKey
                                  outDigest:(NSData *_Nonnull *_Nullable)outDigest
 {
@@ -568,7 +585,13 @@ const NSUInteger kAES256_KeyByteLength = 32;
     *outKey = [attachmentKey copy];
 
     // Apply any padding
-    unsigned long desiredSize = [self paddedSize:attachmentData.length];
+    unsigned long desiredSize;
+    if (shouldPad) {
+        desiredSize = [self paddedSize:attachmentData.length];
+    } else {
+        desiredSize = attachmentData.length;
+    }
+
     NSMutableData *paddedAttachmentData = [attachmentData mutableCopy];
     paddedAttachmentData.length = desiredSize;
 
