@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2018 Open Whisper Systems. All rights reserved.
+//  Copyright (c) 2019 Open Whisper Systems. All rights reserved.
 //
 
 #import "SPKMockProtocolStore.h"
@@ -52,28 +52,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark Signed PreKey Store
 
-- (SignedPreKeyRecord *)throws_loadSignedPrekey:(int)signedPreKeyId
+- (nullable SignedPreKeyRecord *)loadSignedPreKey:(int)signedPreKeyId
 {
-    if (![[self.signedPreKeyStore allKeys] containsObject:[NSNumber numberWithInt:signedPreKeyId]]) {
-        @throw [NSException exceptionWithName:InvalidKeyIdException reason:@"No such signedprekeyrecord" userInfo:nil];
-    }
-
     return [self.signedPreKeyStore objectForKey:[NSNumber numberWithInt:signedPreKeyId]];
-}
-
-- (nullable SignedPreKeyRecord *)loadSignedPrekeyOrNil:(int)signedPreKeyId
-{
-    if ([self containsSignedPreKey:signedPreKeyId]) {
-        @try {
-            // Given that we've checked for `contains` this really shouldn't fail.
-            return [self throws_loadSignedPrekey:signedPreKeyId];
-        } @catch (NSException *exception) {
-            OWSFailDebug(@"unexpected exception: %@", exception);
-            return nil;
-        }
-    } else {
-        return nil;
-    }
 }
 
 - (NSArray<SignedPreKeyRecord *> *)loadSignedPreKeys
@@ -101,19 +82,15 @@ NS_ASSUME_NONNULL_BEGIN
     return FALSE;
 }
 
-- (void)removeSignedPreKey:(int)signedPrekeyId
+- (void)removeSignedPreKey:(int)signedPreKeyId
 {
-    [self.signedPreKeyStore removeObjectForKey:[NSNumber numberWithInteger:signedPrekeyId]];
+    [self.signedPreKeyStore removeObjectForKey:[NSNumber numberWithInteger:signedPreKeyId]];
 }
 
 #pragma mark PreKey Store
 
-- (PreKeyRecord *)throws_loadPreKey:(int)preKeyId
+- (nullable PreKeyRecord *)loadPreKey:(int)preKeyId
 {
-    if (![[self.preKeyStore allKeys] containsObject:[NSNumber numberWithInt:preKeyId]]) {
-        @throw [NSException exceptionWithName:InvalidKeyIdException reason:@"No such signedprekeyrecord" userInfo:nil];
-    }
-
     return [self.preKeyStore objectForKey:[NSNumber numberWithInt:preKeyId]];
 }
 
@@ -149,19 +126,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark IdentityKeyStore
 
-- (nullable ECKeyPair *)identityKeyPair:(nullable id)protocolContext
+- (nullable ECKeyPair *)identityKeyPair:(nullable id<SPKProtocolWriteContext>)protocolContext
 {
     return self.identityKeyPair;
 }
 
-- (int)localRegistrationId:(nullable id)protocolContext
+- (int)localRegistrationId:(nullable id<SPKProtocolWriteContext>)protocolContext
 {
     return self.localRegistrationId;
 }
 
 - (BOOL)saveRemoteIdentity:(NSData *)identityKey
                recipientId:(NSString *)recipientId
-           protocolContext:(nullable id)protocolContext
+           protocolContext:(nullable id<SPKProtocolWriteContext>)protocolContext
 {
     NSData *existingKey = [self.trustedKeys objectForKey:recipientId];
 
@@ -176,7 +153,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isTrustedIdentityKey:(NSData *)identityKey
                  recipientId:(NSString *)recipientId
                    direction:(TSMessageDirection)direction
-             protocolContext:(nullable id)protocolContext
+             protocolContext:(nullable id<SPKProtocolWriteContext>)protocolContext
 {
     NSData *data = [self.trustedKeys objectForKey:recipientId];
     if (!data) {
@@ -202,7 +179,8 @@ NS_ASSUME_NONNULL_BEGIN
     return [self identityKeyForRecipientId:recipientId protocolContext:nil];
 }
 
-- (nullable NSData *)identityKeyForRecipientId:(NSString *)recipientId protocolContext:(nullable id)protocolContext
+- (nullable NSData *)identityKeyForRecipientId:(NSString *)recipientId
+                               protocolContext:(nullable id<SPKProtocolReadContext>)protocolContext
 {
     NSData *_Nullable data = [self.trustedKeys objectForKey:recipientId];
     return data;
@@ -212,7 +190,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (SessionRecord *)loadSession:(NSString *)contactIdentifier
                       deviceId:(int)deviceId
-               protocolContext:(nullable id)protocolContext
+               protocolContext:(nullable id<SPKProtocolWriteContext>)protocolContext
 {
     SessionRecord *sessionRecord = [[self deviceSessionRecordsForContactIdentifier:contactIdentifier]
         objectForKey:[NSNumber numberWithInteger:deviceId]];
@@ -224,10 +202,13 @@ NS_ASSUME_NONNULL_BEGIN
     return sessionRecord;
 }
 
-- (NSArray *)subDevicesSessions:(NSString *)contactIdentifier protocolContext:(nullable id)protocolContext
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-implementations"
+- (NSArray *)subDevicesSessions:(NSString *)contactIdentifier protocolContext:(nullable id<SPKProtocolWriteContext>)protocolContext
 {
     return [[self deviceSessionRecordsForContactIdentifier:contactIdentifier] allKeys];
 }
+#pragma clang diagnostic pop
 
 - (NSMutableDictionary *)deviceSessionRecordsForContactIdentifier:(NSString *)contactIdentifier
 {
@@ -237,7 +218,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)storeSession:(NSString *)contactIdentifier
             deviceId:(int)deviceId
              session:(SessionRecord *)session
-     protocolContext:(nullable id)protocolContext
+     protocolContext:(nullable id<SPKProtocolWriteContext>)protocolContext
 {
     NSAssert(session, @"Session can't be nil");
     NSMutableDictionary *deviceSessions = self.sessionRecords[contactIdentifier];
@@ -251,7 +232,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)containsSession:(NSString *)contactIdentifier
                deviceId:(int)deviceId
-        protocolContext:(nullable id)protocolContext
+        protocolContext:(nullable id<SPKProtocolWriteContext>)protocolContext
 {
 
     if ([[self.sessionRecords objectForKey:contactIdentifier] objectForKey:[NSNumber numberWithInt:deviceId]]) {
@@ -262,14 +243,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)deleteSessionForContact:(NSString *)contactIdentifier
                        deviceId:(int)deviceId
-                protocolContext:(nullable id)protocolContext
+                protocolContext:(nullable id<SPKProtocolWriteContext>)protocolContext
 {
     NSMutableDictionary<NSNumber *, SessionRecord *> *sessions =
         [self deviceSessionRecordsForContactIdentifier:contactIdentifier];
     [sessions removeObjectForKey:@(deviceId)];
 }
 
-- (void)deleteAllSessionsForContact:(NSString *)contactIdentifier protocolContext:(nullable id)protocolContext
+- (void)deleteAllSessionsForContact:(NSString *)contactIdentifier protocolContext:(nullable id<SPKProtocolWriteContext>)protocolContext
 {
     [self.sessionRecords removeObjectForKey:contactIdentifier];
 }

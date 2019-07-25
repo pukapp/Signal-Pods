@@ -290,10 +290,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AxolotlKit:
-    :commit: dedb0f987ac98c8edafc8c54d442c01589cafffb
+    :commit: 8d4451262de7dc26887f25051ee26659c3512907
     :git: https://github.com/signalapp/SignalProtocolKit.git
   Curve25519Kit:
-    :commit: 9e5663baf4c2c7cb68ac4c0beb0423383c19a7fe
+    :commit: 9b5981d7e366e1cd514be483e199d6fc1dd872af
     :git: https://github.com/signalapp/Curve25519Kit
   GRDBCipher:
     :commit: 8f39e07da7be7c440aa7297439fbbc566492bf68
@@ -305,13 +305,13 @@ CHECKOUT OPTIONS:
     :commit: 3e0c2371d125f2d3db26daa498d5d436961b1795
     :git: https://github.com/signalapp/HKDFKit.git
   Mantle:
-    :commit: 9599b1d9796280c97cb2f786f34984fc98a3b6ef
+    :commit: b72c2d1e6132501db906de2cffa8ded7803c54f4
     :git: https://github.com/signalapp/Mantle
   SignalCoreKit:
-    :commit: b9dd2f85c4746b41bb9c9e6993e886aa3b1cf728
+    :commit: 8bbbdd07bbf8c1e84b10f6aca29b3875930d4a52
     :git: https://github.com/signalapp/SignalCoreKit.git
   SignalMetadataKit:
-    :commit: 56f28fc3a6e35d548d034ef7d0009f233ca0aa62
+    :commit: 801b824c9e64423e841763fc61747c0a6272534f
     :git: https://github.com/signalapp/SignalMetadataKit
   Starscream:
     :commit: b09ea163c3cb305152c65b299cb024610f52e735
