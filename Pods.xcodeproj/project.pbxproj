@@ -4256,7 +4256,6 @@
 		AD09CB81113012E5B075BA91CDB2912C /* NSNumber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSNumber.swift; path = GRDB/Core/Support/Foundation/NSNumber.swift; sourceTree = "<group>"; };
 		AD276160E688AC5C38A63BEF4115A78A /* PreKeyWhisperMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PreKeyWhisperMessage.h; path = AxolotlKit/Classes/CipherMessage/PreKeyWhisperMessage.h; sourceTree = "<group>"; };
 		AD392E89B78596CD9E323F4972E8D749 /* TSInvalidIdentityKeyErrorMessage+SDS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "TSInvalidIdentityKeyErrorMessage+SDS.swift"; sourceTree = "<group>"; };
-		AD4F8C712394F3ED0050FBAF /* AudioWaveform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioWaveform.swift; path = "../../../../Signal-iOS/SignalServiceKit/src/Util/AudioWaveform.swift"; sourceTree = "<group>"; };
 		ADD52BBFE540BECDA449CFF21D3091AE /* SAMKeychain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAMKeychain.h; path = Sources/SAMKeychain.h; sourceTree = "<group>"; };
 		ADF333E984E8ECDCB4A27408780893FD /* rescaler_sse2.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = rescaler_sse2.c; path = src/dsp/rescaler_sse2.c; sourceTree = "<group>"; };
 		ADFE0C0C09853FFF42E92643B5B95A94 /* HasOneThroughAssociation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HasOneThroughAssociation.swift; path = GRDB/QueryInterface/Association/HasOneThroughAssociation.swift; sourceTree = "<group>"; };
@@ -4686,7 +4685,7 @@
 		EABE62BBC8261532BE74C3EB9D82D1AE /* Reachability.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Reachability.modulemap; sourceTree = "<group>"; };
 		EAC09553A7353810E9AFF06107CB51B4 /* Inflections.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Inflections.swift; path = GRDB/Utils/Inflections.swift; sourceTree = "<group>"; };
 		EB20D482F9CF2EB019E384A8A08E1F18 /* HasManyThroughAssociation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HasManyThroughAssociation.swift; path = GRDB/QueryInterface/Association/HasManyThroughAssociation.swift; sourceTree = "<group>"; };
-		EB2603FF23ED3F52009A420D /* AudioWaveform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioWaveform.swift; path = ../SignalServiceKit/src/Util/AudioWaveform.swift; sourceTree = "<group>"; };
+		EB2603FF23ED3F52009A420D /* AudioWaveform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioWaveform.swift; sourceTree = "<group>"; };
 		EB3E91A04C96A05A0E14750E5F488006 /* YapDatabaseFullTextSearchConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YapDatabaseFullTextSearchConnection.h; path = YapDatabase/Extensions/FullTextSearch/YapDatabaseFullTextSearchConnection.h; sourceTree = "<group>"; };
 		EB8AAE58DB2B60C8E6600BBB5C81A48C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBC2D5C39F8B877F60767D21C0E62646 /* DDOSLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDOSLogger.h; path = Classes/DDOSLogger.h; sourceTree = "<group>"; };
@@ -6185,7 +6184,7 @@
 		6F71E88A4FEDA619B06855BA0639C76A /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				AD4F8C712394F3ED0050FBAF /* AudioWaveform.swift */,
+				EB2603FF23ED3F52009A420D /* AudioWaveform.swift */,
 				10F89A0EDEFD90B0B0AD0F6D058F81C0 /* AppContext.h */,
 				A7F3B71277D0A4A1B78CDAD63F6FE20E /* AppContext.m */,
 				9A678400FD4F3DDA98BBDCFAD42C5CCA /* AppExpiry.swift */,
@@ -6462,7 +6461,6 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				EB2603FF23ED3F52009A420D /* AudioWaveform.swift */,
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				CF2C047DCE84E24DB5265924D5B81819 /* Development Pods */,
 				05C30BCE29097DF0A4484E2F8219FC6E /* Frameworks */,
