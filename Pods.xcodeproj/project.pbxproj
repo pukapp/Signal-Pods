@@ -1207,7 +1207,6 @@
 		AD3CC75501C1B6B86DC99A262B94FB17 /* YapCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 07DCF8D00F3F32808F3DC000B594A1C0 /* YapCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD3EC7E75CAB7ACB36A370ADBDDD5761 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEFCA0B0867FBCFC9DE99ADF41397791 /* CocoaLumberjack.framework */; };
 		AD4C1014C5A3548D15F58FEE5463BCAD /* FieldTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222C23367BCE768F5075037B64846A4 /* FieldTag.swift */; };
-		AD4F8C722394F3ED0050FBAF /* AudioWaveform.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F8C712394F3ED0050FBAF /* AudioWaveform.swift */; };
 		AD5E84714C476ACF22178604B4AFE6BE /* YapDatabaseViewPageMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 93A67A172F27868FF2067A789DDE9C24 /* YapDatabaseViewPageMetadata.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		AD5F4A67C1E917DA62E4E8093B2DABDB /* YapDatabaseViewPageMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B1B05210C0952387BC832BC0257434 /* YapDatabaseViewPageMetadata.m */; };
 		AD5F7D08DAD0EB922C26DA85970A44AD /* libPhoneNumber_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F006EBDA32E2FD571AECAF469BD3276E /* libPhoneNumber_iOS.framework */; };
@@ -1647,6 +1646,7 @@
 		EA899D83D42278703449DBBAF8BA658B /* cost_sse2.c in Sources */ = {isa = PBXBuildFile; fileRef = 8F3393EEB0AB4E4439E56CD707679BD9 /* cost_sse2.c */; settings = {COMPILER_FLAGS = "-D_THREAD_SAFE -fno-objc-arc"; }; };
 		EAF3C942D3BDDF9823B3F708002A2287 /* SSKPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FA132733C23A25D1F78141A161D92B /* SSKPreferences.swift */; settings = {COMPILER_FLAGS = "-fcxx-modules"; }; };
 		EB0FCA5E0C2EA890B7EFE51004AC5852 /* YapDatabaseViewPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 99C8218D745704202E619014E801F425 /* YapDatabaseViewPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		EB26040023ED3F52009A420D /* AudioWaveform.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2603FF23ED3F52009A420D /* AudioWaveform.swift */; };
 		EB3CAA267BE351CC1883D61247D81483 /* SignedPrekeyRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 10129649CC0DD1F00EC7612D49EA5C0C /* SignedPrekeyRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB4DF88D6B030BDCE01385B078E9F3E3 /* AnyMessageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB0FDBE4A307C3CB1A560DA5CC499B /* AnyMessageStorage.swift */; };
 		EB57DCF4708916E7BE11FD3DAEC95AFF /* OWSSyncGroupsRequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F818E9D7A6C183E3D0A19DFE5911AB3B /* OWSSyncGroupsRequestMessage.m */; settings = {COMPILER_FLAGS = "-fcxx-modules"; }; };
@@ -4686,6 +4686,7 @@
 		EABE62BBC8261532BE74C3EB9D82D1AE /* Reachability.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Reachability.modulemap; sourceTree = "<group>"; };
 		EAC09553A7353810E9AFF06107CB51B4 /* Inflections.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Inflections.swift; path = GRDB/Utils/Inflections.swift; sourceTree = "<group>"; };
 		EB20D482F9CF2EB019E384A8A08E1F18 /* HasManyThroughAssociation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HasManyThroughAssociation.swift; path = GRDB/QueryInterface/Association/HasManyThroughAssociation.swift; sourceTree = "<group>"; };
+		EB2603FF23ED3F52009A420D /* AudioWaveform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioWaveform.swift; path = ../SignalServiceKit/src/Util/AudioWaveform.swift; sourceTree = "<group>"; };
 		EB3E91A04C96A05A0E14750E5F488006 /* YapDatabaseFullTextSearchConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YapDatabaseFullTextSearchConnection.h; path = YapDatabase/Extensions/FullTextSearch/YapDatabaseFullTextSearchConnection.h; sourceTree = "<group>"; };
 		EB8AAE58DB2B60C8E6600BBB5C81A48C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBC2D5C39F8B877F60767D21C0E62646 /* DDOSLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDOSLogger.h; path = Classes/DDOSLogger.h; sourceTree = "<group>"; };
@@ -6461,6 +6462,7 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
+				EB2603FF23ED3F52009A420D /* AudioWaveform.swift */,
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				CF2C047DCE84E24DB5265924D5B81819 /* Development Pods */,
 				05C30BCE29097DF0A4484E2F8219FC6E /* Frameworks */,
@@ -10549,6 +10551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB26040023ED3F52009A420D /* AudioWaveform.swift in Sources */,
 				F3740885565C06535DF19063CD1686AB /* AccountServiceClient.swift in Sources */,
 				435870DE389426532C6E4E6C348C3CE0 /* AppContext.m in Sources */,
 				210CD392F6CEE7B4C50BC417742FA58C /* AppExpiry.swift in Sources */,
@@ -10708,7 +10711,6 @@
 				AE382A2FDE8AAD750EBF537B9E4FC3F6 /* OWSSignalService.m in Sources */,
 				32A4A02D457B6839D92A94F01E725574 /* OWSStickerPackSyncMessage.m in Sources */,
 				B4CE9A653DBC4531336373D94C91B64E /* OWSStorage.m in Sources */,
-				AD4F8C722394F3ED0050FBAF /* AudioWaveform.swift in Sources */,
 				3800AD8CCF03AA1CB0AC06FD65415791 /* OWSSyncConfigurationMessage.m in Sources */,
 				FC6C294841FB1AA14D9D01FA8806F4E9 /* OWSSyncContactsMessage.m in Sources */,
 				C5B87DDA8C4456C55310F16D3C8AC81C /* OWSSyncGroupsMessage.m in Sources */,
@@ -13365,6 +13367,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -14885,6 +14888,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -16281,6 +16285,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
