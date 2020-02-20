@@ -5,7 +5,7 @@
 # If the path isn't an absolute path, we add a realtive prefix.
 old_read_link=`which readlink`
 readlink () {
-    path=`$old_read_link "$1"`;
+    path=`$old_read_link $1`;
     if [ $(echo "$path" | cut -c 1-1) = '/' ]; then
         echo $path;
     else
@@ -195,6 +195,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SignalServiceKit/SignalServiceKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YapDatabase/YapDatabase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZKGroup/ZKGroup.framework"
@@ -225,6 +226,7 @@ if [[ "$CONFIGURATION" == "App Store Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SignalServiceKit/SignalServiceKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YapDatabase/YapDatabase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZKGroup/ZKGroup.framework"
@@ -255,6 +257,7 @@ if [[ "$CONFIGURATION" == "Testable Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SignalServiceKit/SignalServiceKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YapDatabase/YapDatabase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZKGroup/ZKGroup.framework"
