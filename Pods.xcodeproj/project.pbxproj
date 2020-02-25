@@ -1028,7 +1028,6 @@
 		7F0E377814E7A4B19918C39F8E36D212 /* OWSFakeMessageSender.m in Sources */ = {isa = PBXBuildFile; fileRef = B4391AD31AB9994B9ACD1B29FA5D9836 /* OWSFakeMessageSender.m */; settings = {COMPILER_FLAGS = "-fcxx-modules"; }; };
 		7F109553A214EC34FCB4D8523E0F62D3 /* NSArray+OWS.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B64FC641782266A0874671065D03BE /* NSArray+OWS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F20EE13791E1338F7BE5DB25DF2C645 /* SyncManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B888FD5636B2F0FC956ADA1B35C54B /* SyncManagerProtocol.swift */; settings = {COMPILER_FLAGS = "-fcxx-modules"; }; };
-		7F2F117CAB9D36F04122D5D6A56A0076 /* PendingReadReceiptRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302FFAFB34DA5DAE96FAD68B2E6DD79C /* PendingReadReceiptRecord.swift */; settings = {COMPILER_FLAGS = "-fcxx-modules"; }; };
 		7F446ECCA09E8E0485E644AB3182BF1A /* FetchedRecordsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF7F59F78F5EB7F6C236DBA63BC7A21 /* FetchedRecordsController.swift */; };
 		7F5FF275EE524BF300E90D9BC23958EE /* alpha_processing.c in Sources */ = {isa = PBXBuildFile; fileRef = A73C0A25F8DEE8351A3F2C8D30C273E3 /* alpha_processing.c */; settings = {COMPILER_FLAGS = "-D_THREAD_SAFE -fno-objc-arc"; }; };
 		7F7CF6E3471E707B21B2CC4009B33C7B /* SignalService.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04242A503EAF592E34F1F0DFFCF7D5F5 /* SignalService.pb.swift */; settings = {COMPILER_FLAGS = "-fcxx-modules"; }; };
@@ -1611,7 +1610,6 @@
 		C40B6E29D4574ABA1EC372A2BD1DC647 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFEF32630AF91FA18DD1FA364D66DF3 /* Foundation.framework */; };
 		C41160181B0F9119837539F154859F50 /* YapDatabaseFullTextSearchTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E60D3D9FE54642492258928C90B0CF84 /* YapDatabaseFullTextSearchTransaction.m */; };
 		C46C2EAE993D4264586B97775EF27D05 /* YapDatabaseCloudCoreOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BADA160D14C19A944BEB5C0C68C6296 /* YapDatabaseCloudCoreOptions.m */; };
-		C4772D9C3494C61BC9E8A141344649C7 /* NoopPendingReadReceiptRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A826CA48C244FB4AD1DB3C852F559 /* NoopPendingReadReceiptRecorder.swift */; settings = {COMPILER_FLAGS = "-fcxx-modules"; }; };
 		C4B15F934A7C15C297DFEB0F7EA6F3D1 /* TextAnimatorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154E6167F2A311634CBF1F9A1E813B03 /* TextAnimatorNode.swift */; };
 		C4BAC0CC86CD5F749605165701CA84F3 /* SQLSelectable+QueryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C90B2A9AF744074FC8A88905AD720 /* SQLSelectable+QueryInterface.swift */; };
 		C53CD28E6086D620BBF1472442A50319 /* BaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 68293A0B3E6A7E44541704349C902EAE /* BaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -3867,7 +3865,6 @@
 		30012E976CF7CD9FF36CF10F2601278A /* DatabaseSnapshot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatabaseSnapshot.swift; path = GRDB/Core/DatabaseSnapshot.swift; sourceTree = "<group>"; };
 		300C87373FEF989E741846231E865BBC /* StorageServiceProto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StorageServiceProto.swift; sourceTree = "<group>"; };
 		301020FBB388A961649B76F7BB1115A5 /* FunctionalUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FunctionalUtil.m; sourceTree = "<group>"; };
-		302FFAFB34DA5DAE96FAD68B2E6DD79C /* PendingReadReceiptRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PendingReadReceiptRecord.swift; sourceTree = "<group>"; };
 		3033FE9BCB5CF960B4A95A647D064051 /* YapDatabaseCloudKitConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YapDatabaseCloudKitConnection.m; path = YapDatabase/Extensions/CloudKit/YapDatabaseCloudKitConnection.m; sourceTree = "<group>"; };
 		3041203CAF4AE72D4383F3FBCB040231 /* ssim_sse2.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ssim_sse2.c; path = src/dsp/ssim_sse2.c; sourceTree = "<group>"; };
 		306976832A15F81B30E4DFC4421DA21E /* thread.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = thread.h; path = "phc-winner-argon2/src/thread.h"; sourceTree = "<group>"; };
@@ -5395,7 +5392,6 @@
 		DF825AEC3FEDF6005C9BEFC9D6861777 /* DDLoggerNames.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLoggerNames.h; path = Sources/CocoaLumberjack/include/DDLoggerNames.h; sourceTree = "<group>"; };
 		DF8D85B22C6185C94B7B37B349ABA9CA /* KeyBackup.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyBackup.pb.swift; sourceTree = "<group>"; };
 		DF8D8AC305B50E97405E2B225B49987E /* JSONEncodingVisitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONEncodingVisitor.swift; path = Sources/SwiftProtobuf/JSONEncodingVisitor.swift; sourceTree = "<group>"; };
-		E00A826CA48C244FB4AD1DB3C852F559 /* NoopPendingReadReceiptRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NoopPendingReadReceiptRecorder.swift; sourceTree = "<group>"; };
 		E015D1DAC07ED4F8CAF940C0F96457DB /* PrecompAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrecompAsset.swift; path = "lottie-swift/src/Private/Model/Assets/PrecompAsset.swift"; sourceTree = "<group>"; };
 		E01A5A9840E0216410AE4FD0AED308CE /* SignedPreKeyStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SignedPreKeyStore.h; path = AxolotlKit/Classes/State/SignedPreKeyStore.h; sourceTree = "<group>"; };
 		E032CAB218F0DF1E32734071391A0AA6 /* EllipseNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EllipseNode.swift; path = "lottie-swift/src/Private/NodeRenderSystem/Nodes/PathNodes/EllipseNode.swift"; sourceTree = "<group>"; };
@@ -6680,7 +6676,6 @@
 				481DBA5D36AE98C29817E8A04E7AC1BC /* OWSStorage.h */,
 				132F0BBE1192E5DEA2DF97D3AEB81E8C /* OWSStorage.m */,
 				723E85F84EC88C99EE5F95E3ADE1919F /* OWSStorage+Subclass.h */,
-				302FFAFB34DA5DAE96FAD68B2E6DD79C /* PendingReadReceiptRecord.swift */,
 				D34CF30419CC77756F0B1BFF5A1C60D4 /* SSKIncrementingIdFinder.swift */,
 				24BE3B702BA9D108675B234F853A672F /* SSKKeychainStorage.swift */,
 				A6D3740D832A1F0DD170AAD5544BDD50 /* SSKMessageSenderJobRecord.h */,
@@ -9006,7 +9001,6 @@
 				7363666E7DFD5F4616340A2040CD00C9 /* MockSSKEnvironment.h */,
 				1C9C8FEF77B249E1EA3FEF6667E0A6A6 /* MockSSKEnvironment.m */,
 				FB9E8D01531823E2CE8B163E9B6AF39E /* NoopNotificationsManager.swift */,
-				E00A826CA48C244FB4AD1DB3C852F559 /* NoopPendingReadReceiptRecorder.swift */,
 				AA675551DF1704752312387F7CD2D2C8 /* OWSFakeCallMessageHandler.h */,
 				43798ACAF26DB181149CB80F0AC30FE3 /* OWSFakeCallMessageHandler.m */,
 				15B6C158336BC9C94CB1258129187645 /* OWSFakeContactsUpdater.h */,
@@ -12684,7 +12678,6 @@
 				1157CEAA3917FD5AA7477504453A0D1A /* NetworkManager.swift in Sources */,
 				DD1647B6A95481F633C89FF54DE335C0 /* NewGroupSeed.swift in Sources */,
 				E1AC3F0B6AC0062A1A882704617D2C11 /* NoopNotificationsManager.swift in Sources */,
-				C4772D9C3494C61BC9E8A141344649C7 /* NoopPendingReadReceiptRecorder.swift in Sources */,
 				A34FE07C31DAC7066DC33E3A1608EB90 /* NSArray+OWS.m in Sources */,
 				114073F0F93AE4D10B68A8F39841367B /* NSData+Image.m in Sources */,
 				5886DB9B169D052A46C81E08FF2409F7 /* NSError+OWSOperation.m in Sources */,
@@ -12826,7 +12819,6 @@
 				098DB8A1260989184FEA798496804F6C /* OWSViewOnceMessageReadSyncMessage.m in Sources */,
 				2D6C9422788875CA3D3A95A532485D28 /* OWSWebSocket.m in Sources */,
 				48EB39DD55DD0FB93C65AA4322D791BD /* ParamParser.swift in Sources */,
-				7F2F117CAB9D36F04122D5D6A56A0076 /* PendingReadReceiptRecord.swift in Sources */,
 				069F0D969F80A9B9D82D5EB3A1ACF7D8 /* PhoneNumber.m in Sources */,
 				264FCCC07858292AB70156E74CF7AD1F /* PhoneNumberUtil.m in Sources */,
 				37C5D1A117E9FD3663A2D5A8DEA51185 /* PreKeyBundle+jsonDict.m in Sources */,
