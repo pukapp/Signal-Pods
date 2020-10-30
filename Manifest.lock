@@ -21,6 +21,9 @@ PODS:
     - SignalCoreKit
     - SwiftProtobuf
   - blurhash (0.0.1)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - CocoaLumberjack (3.6.2):
     - CocoaLumberjack/Core (= 3.6.2)
   - CocoaLumberjack/Core (3.6.2)
@@ -68,6 +71,8 @@ PODS:
   - Mantle (2.1.0):
     - Mantle/extobjc (= 2.1.0)
   - Mantle/extobjc (2.1.0)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.5.0)
   - PromiseKit (6.13.1):
     - PromiseKit/CorePromise (= 6.13.1)
     - PromiseKit/Foundation (= 6.13.1)
@@ -80,6 +85,9 @@ PODS:
   - PureLayout (3.1.4)
   - Reachability (3.2)
   - SAMKeychain (1.5.3)
+  - SDWebImage (5.9.1):
+    - SDWebImage/Core (= 5.9.1)
+  - SDWebImage/Core (5.9.1)
   - SignalCoreKit (1.0.0):
     - CocoaLumberjack
     - GRKOpenSSLFramework
@@ -147,6 +155,7 @@ PODS:
     - SwiftProtobuf
     - YapDatabase/SQLCipher
     - YYImage/WebP
+  - SnapKit (5.0.1)
   - SQLCipher (4.3.0):
     - SQLCipher/standard (= 4.3.0)
   - SQLCipher/common (4.3.0)
@@ -155,6 +164,7 @@ PODS:
   - SSZipArchive (2.1.4)
   - Starscream (3.0.6)
   - SwiftProtobuf (1.7.0)
+  - SwiftyJSON (4.3.0)
   - YapDatabase/SQLCipher (3.1.1):
     - YapDatabase/SQLCipher/Core (= 3.1.1)
     - YapDatabase/SQLCipher/Extensions (= 3.1.1)
@@ -235,6 +245,7 @@ DEPENDENCIES:
   - AxolotlKit (from `https://github.com/signalapp/SignalProtocolKit.git`, branch `master`)
   - AxolotlKit/Tests (from `https://github.com/signalapp/SignalProtocolKit.git`, branch `master`)
   - blurhash (from `https://github.com/signalapp/blurhash`, branch `signal-master`)
+  - Charts
   - Curve25519Kit (from `https://github.com/signalapp/Curve25519Kit`)
   - Curve25519Kit/Tests (from `https://github.com/signalapp/Curve25519Kit`)
   - GRDB.swift/SQLCipher
@@ -244,9 +255,12 @@ DEPENDENCIES:
   - libPhoneNumber-iOS (from `https://github.com/signalapp/libPhoneNumber-iOS`, branch `signal-master`)
   - lottie-ios
   - Mantle (from `https://github.com/signalapp/Mantle`, branch `signal-master`)
+  - MBProgressHUD
+  - MJRefresh
   - PromiseKit
   - PureLayout
   - Reachability
+  - SDWebImage
   - SignalCoreKit (from `https://github.com/signalapp/SignalCoreKit.git`)
   - SignalCoreKit/Tests (from `https://github.com/signalapp/SignalCoreKit.git`)
   - SignalMetadataKit (from `https://github.com/signalapp/SignalMetadataKit`)
@@ -254,10 +268,12 @@ DEPENDENCIES:
   - SignalRingRTC (from `ThirdParty/SignalRingRTC.podspec`)
   - SignalServiceKit (from `.`)
   - SignalServiceKit/Tests (from `.`)
+  - SnapKit
   - SQLCipher (>= 4.0.1)
   - SSZipArchive
   - Starscream (from `https://github.com/signalapp/Starscream.git`, branch `signal-release`)
   - SwiftProtobuf (= 1.7.0)
+  - SwiftyJSON (~> 4.0)
   - YapDatabase/SQLCipher (from `https://github.com/signalapp/YapDatabase.git`, branch `signal-release`)
   - YYImage (from `https://github.com/signalapp/YYImage`)
   - ZKGroup (from `https://github.com/signalapp/signal-zkgroup-swift`)
@@ -267,17 +283,23 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - Charts
     - CocoaLumberjack
     - GRDB.swift
     - libwebp
     - lottie-ios
+    - MBProgressHUD
+    - MJRefresh
     - PromiseKit
     - PureLayout
     - Reachability
     - SAMKeychain
+    - SDWebImage
+    - SnapKit
     - SQLCipher
     - SSZipArchive
     - SwiftProtobuf
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
   Argon2:
@@ -377,6 +399,7 @@ SPEC CHECKSUMS:
   Argon2: b11fcfa58057e2522356ddc6a817cd875297edfe
   AxolotlKit: ac03e4d79486b62d08282c840da410116227683e
   blurhash: 150e9ffe986f028a38f7b469b5a279eab45352df
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   Curve25519Kit: e63f9859ede02438ae3defc5e1a87e09d1ec7ee6
   GRDB.swift: 083ec261ce573888d8ed2eae1b49bc0bf40d9e2c
@@ -386,23 +409,28 @@ SPEC CHECKSUMS:
   libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
   lottie-ios: 496ac5cea1bbf1a7bd1f1f472f3232eb1b8d744b
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
   SignalCoreKit: 4562b2bbd9830077439ca003f952a798457d4ea5
   SignalMetadataKit: a7aacedf262d947c22e2c619f0fd217163d2a637
   SignalRingRTC: a9440c9e4ff69f399bbd35609b7732da73254636
-  SignalServiceKit: 2adac6fb54ddf719e17c1adaf5b6bfa01cdfdde1
+  SignalServiceKit: 3f346060f3b5066475e7e8dd732570822e1f6879
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SQLCipher: d305a7bd9af4b64f095c79bdc1a1fa50f2a15116
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   Starscream: 8aaf1a7feb805c816d0e7d3190ef23856f6665b9
   SwiftProtobuf: 4fd9645e69b72cbae6ec8da5be0cdd20ca6565dd
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YapDatabase: b418a4baa6906e8028748938f9159807fd039af4
   YYImage: 6db68da66f20d9f169ceb94dfb9947c3867b9665
   ZKGroup: 15a08eed5870a44b9dd14af0824ac95f6eed7380
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 59fbce5662ea70763675102e61f3678abe002f32
+PODFILE CHECKSUM: 060e81b00cdf3aebe6bbfb262bab40966766b53a
 
-COCOAPODS: 1.9.2
+COCOAPODS: 1.9.3
