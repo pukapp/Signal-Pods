@@ -155,6 +155,7 @@ PODS:
     - SwiftProtobuf
     - YapDatabase/SQLCipher
     - YYImage/WebP
+  - SKPhotoBrowser (6.1.0)
   - SnapKit (5.0.1)
   - SQLCipher (4.3.0):
     - SQLCipher/standard (= 4.3.0)
@@ -268,6 +269,7 @@ DEPENDENCIES:
   - SignalRingRTC (from `ThirdParty/SignalRingRTC.podspec`)
   - SignalServiceKit (from `.`)
   - SignalServiceKit/Tests (from `.`)
+  - SKPhotoBrowser (= 6.1.0)
   - SnapKit
   - SQLCipher (>= 4.0.1)
   - SSZipArchive
@@ -295,6 +297,7 @@ SPEC REPOS:
     - Reachability
     - SAMKeychain
     - SDWebImage
+    - SKPhotoBrowser
     - SnapKit
     - SQLCipher
     - SSZipArchive
@@ -420,6 +423,7 @@ SPEC CHECKSUMS:
   SignalMetadataKit: a7aacedf262d947c22e2c619f0fd217163d2a637
   SignalRingRTC: a9440c9e4ff69f399bbd35609b7732da73254636
   SignalServiceKit: 3f346060f3b5066475e7e8dd732570822e1f6879
+  SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SQLCipher: d305a7bd9af4b64f095c79bdc1a1fa50f2a15116
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
@@ -431,6 +435,6 @@ SPEC CHECKSUMS:
   ZKGroup: 15a08eed5870a44b9dd14af0824ac95f6eed7380
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 060e81b00cdf3aebe6bbfb262bab40966766b53a
+PODFILE CHECKSUM: ae4af0378f81a16a270bcc3dd7ee0d7d8d74063a
 
 COCOAPODS: 1.9.3
