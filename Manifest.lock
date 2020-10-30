@@ -33,6 +33,7 @@ PODS:
   - Curve25519Kit/Tests (2.1.0):
     - CocoaLumberjack
     - SignalCoreKit
+  - DropDown (2.3.13)
   - GRDB.swift/SQLCipher (4.3.0):
     - SQLCipher (>= 3.4.0)
   - GRKOpenSSLFramework (1.0.2.19)
@@ -249,6 +250,7 @@ DEPENDENCIES:
   - Charts
   - Curve25519Kit (from `https://github.com/signalapp/Curve25519Kit`)
   - Curve25519Kit/Tests (from `https://github.com/signalapp/Curve25519Kit`)
+  - DropDown (= 2.3.13)
   - GRDB.swift/SQLCipher
   - GRKOpenSSLFramework (from `https://github.com/signalapp/GRKOpenSSLFramework`, branch `mkirk/1.0.2t`)
   - HKDFKit (from `https://github.com/signalapp/HKDFKit.git`)
@@ -287,6 +289,7 @@ SPEC REPOS:
     - AFNetworking
     - Charts
     - CocoaLumberjack
+    - DropDown
     - GRDB.swift
     - libwebp
     - lottie-ios
@@ -405,6 +408,7 @@ SPEC CHECKSUMS:
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   Curve25519Kit: e63f9859ede02438ae3defc5e1a87e09d1ec7ee6
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   GRDB.swift: 083ec261ce573888d8ed2eae1b49bc0bf40d9e2c
   GRKOpenSSLFramework: 4abc733a8fcbc37060619a86a54202d2938dd70e
   HKDFKit: bd6b9566654253aa45ef60a205979ec291f00641
@@ -435,6 +439,6 @@ SPEC CHECKSUMS:
   ZKGroup: 15a08eed5870a44b9dd14af0824ac95f6eed7380
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: ae4af0378f81a16a270bcc3dd7ee0d7d8d74063a
+PODFILE CHECKSUM: 2fdb95c8068da03e9384ac85b141a27fb92d6136
 
 COCOAPODS: 1.9.3
